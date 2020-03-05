@@ -1,4 +1,4 @@
-package com.example.vamk;
+package com.personal.vamk;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,11 +12,11 @@ public class StudentController {
     @Autowired
     StudentRepo repo;
 
-    @GetMapping("/Student")
+    @GetMapping("/Students")
     public List<Student> listAll(){
         return repo.findAll();
     }
-    @GetMapping("/Student/{id}")
+    @GetMapping("/Students/{id}")
     public Optional<Student> student(@PathVariable String id){
         Optional<Student> findStudent = repo.findById(id);
         Optional<Student> empty = Optional.empty();
@@ -28,6 +28,7 @@ public class StudentController {
         }
         return empty;
     }
+
     @PostMapping("/Students")
     public Object newStudent(@RequestBody Student newStu){
 
@@ -37,5 +38,13 @@ public class StudentController {
             return repo.save(newStu);
         }
         return repo.save(newStu);
+    }
+    @PutMapping("/Students/{id}")
+    public Object editStu(@RequestBody String major, @PathVariable String id){
+        if(repo.findById(id).isPresent()){
+            Optional<Student> edit = repo.findById(id);
+
+        }
+        return null;
     }
 }

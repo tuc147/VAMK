@@ -1,4 +1,4 @@
-package com.example.vamk;
+package com.personal.vamk;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

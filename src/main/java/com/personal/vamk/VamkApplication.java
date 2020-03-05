@@ -1,4 +1,4 @@
-package com.example.vamk;
+package com.personal.vamk;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
