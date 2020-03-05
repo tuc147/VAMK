@@ -16,6 +16,7 @@ public class StudentController {
     public List<Student> listAll(){
         return repo.findAll();
     }
+
     @GetMapping("/Students/{id}")
     public Optional<Student> student(@PathVariable String id){
         Optional<Student> findStudent = repo.findById(id);
